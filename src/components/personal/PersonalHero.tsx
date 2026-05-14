@@ -59,7 +59,7 @@ export function PersonalHero() {
           {...fadeUp(0.2)}
           className="text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl mx-auto leading-snug"
         >
-          {tr.headlinePart1}
+          {tr.headlinePart1}{" "}
           <br className="hidden sm:block" />
           {tr.headlinePart2}
         </motion.p>
@@ -87,7 +87,7 @@ export function PersonalHero() {
               rel="noopener noreferrer"
               className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 h-11 rounded-full border border-white/10 text-sm font-medium text-muted-foreground hover:text-foreground hover:border-white/20 transition-colors"
             >
-              GitHub ↗
+              GitHub ↗︎
             </a>
             <a
               href={personalNav.linkedin}
@@ -95,7 +95,7 @@ export function PersonalHero() {
               rel="noopener noreferrer"
               className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 h-11 rounded-full border border-white/10 text-sm font-medium text-muted-foreground hover:text-foreground hover:border-white/20 transition-colors"
             >
-              LinkedIn ↗
+              LinkedIn ↗︎
             </a>
           </div>
         </motion.div>

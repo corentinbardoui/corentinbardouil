@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
+  <defs>
+    <filter id="b1" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="90"/>
+    </filter>
+    <filter id="b2" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="75"/>
+    </filter>
+    <filter id="b3" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="65"/>
+    </filter>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="white" stroke-width="1" stroke-opacity="0.14"/>
+    </pattern>
+  </defs>
+
+  <!-- Background — slightly lighter than site to compensate LinkedIn darkening -->
+  <rect width="1584" height="396" fill="#0f0f1a"/>
+
+  <!-- Orb 1 — purple, top-left -->
+  <circle cx="60" cy="-40" r="380" fill="#5B4BE8" fill-opacity="0.38" filter="url(#b1)"/>
+
+  <!-- Orb 2 — orange, right -->
+  <circle cx="1540" cy="200" r="320" fill="#ea7316" fill-opacity="0.28" filter="url(#b2)"/>
+
+  <!-- Orb 3 — purple, bottom-center -->
+  <circle cx="780" cy="440" r="260" fill="#5B4BE8" fill-opacity="0.22" filter="url(#b3)"/>
+
+  <!-- Grid overlay -->
+  <rect width="1584" height="396" fill="url(#grid)"/>
+</svg>

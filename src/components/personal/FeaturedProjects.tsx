@@ -96,7 +96,7 @@ function FeaturedCard({ project }: { project: MergedProject }) {
                   rel="noopener noreferrer"
                   className="text-xs font-mono text-muted-foreground/50 hover:text-foreground transition-colors"
                 >
-                  View app ↗
+                  View app ↗︎
                 </a>
               )}
             </div>
@@ -152,7 +152,7 @@ function MvpCard({ project, index }: { project: MergedProject; index: number }) 
                 rel="noopener noreferrer"
                 className="shrink-0 text-xs font-mono text-muted-foreground/50 hover:text-foreground transition-colors pt-0.5"
               >
-                View app ↗
+                View app ↗︎
               </a>
             )}
           </div>
