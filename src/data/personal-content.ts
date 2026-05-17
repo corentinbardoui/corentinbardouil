@@ -20,7 +20,7 @@ export const personalNav = {
     { label: "Projects", href: "#projects" },
     { label: "About", href: "#about" },
   ],
-  github: "https://github.com/corentinbardouil",
+  github: "https://github.com/corentinbardoui",
   linkedin: "https://linkedin.com/in/corentin-bardouil",
 };
 
@@ -156,7 +156,7 @@ export const personalAbout = {
   ],
   links: {
     linkedin: "https://linkedin.com/in/corentin-bardouil",
-    github: "https://github.com/corentinbardouil",
+    github: "https://github.com/corentinbardoui",
     email: "corentin.bardouil@gmail.com",
   },
 };
@@ -164,7 +164,7 @@ export const personalAbout = {
 export const personalFooter = {
   name: "Corentin Bardouil",
   links: [
-    { label: "GitHub", href: "https://github.com/corentinbardouil", icon: "/github.svg" },
+    { label: "GitHub", href: "https://github.com/corentinbardoui", icon: "/github.svg" },
     { label: "LinkedIn", href: "https://linkedin.com/in/corentin-bardouil", icon: "/linkedin.svg" },
     { label: "Email", href: "mailto:corentin.bardouil@gmail.com", icon: "/mail.svg" },
   ],
