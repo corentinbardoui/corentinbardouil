@@ -196,7 +196,7 @@ export function FeaturedProjects() {
   const mvps = mergedProjects.filter((p) => p.variant === "mvp");
 
   return (
-    <section id="projects" className="py-24 px-6 border-t border-white/5">
+    <section id="projects" className="py-24 px-6 border-t border-border">
       <div className="max-w-5xl mx-auto space-y-6">
         <div className="grid md:grid-cols-[200px_1fr] gap-12 items-start mb-6">
           <motion.p

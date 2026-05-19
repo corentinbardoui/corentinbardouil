@@ -10,7 +10,7 @@ export function PersonalAbout() {
   const tr = t[lang].about;
 
   return (
-    <section id="about" className="py-24 px-6 border-t border-white/5">
+    <section id="about" className="py-24 px-6 border-t border-border">
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-[200px_1fr] gap-12 items-start">
           <motion.p

@@ -9,7 +9,7 @@ export function CurrentFocus() {
   const tr = t[lang].focus;
 
   return (
-    <section id="focus" className="py-24 px-6 border-t border-white/5">
+    <section id="focus" className="py-24 px-6 border-t border-border">
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-[200px_1fr] gap-12 items-start">
           <motion.div
