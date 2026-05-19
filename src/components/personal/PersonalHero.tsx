@@ -24,14 +24,7 @@ export function PersonalHero() {
         <div className="orb-1 absolute -top-40 -left-40 w-150 h-150 rounded-full bg-[radial-gradient(circle,oklch(0.63_0.22_265/0.18),transparent_70%)]" />
         <div className="orb-2 absolute top-1/3 -right-60 w-125 h-125 rounded-full bg-[radial-gradient(circle,oklch(0.72_0.19_45/0.12),transparent_70%)]" />
         <div className="orb-3 absolute -bottom-20 left-1/3 w-100 h-100 rounded-full bg-[radial-gradient(circle,oklch(0.63_0.22_265/0.10),transparent_70%)]" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(oklch(1 0 0 / 1) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0 / 1) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
-        />
+        <div className="hero-grid" />
       </div>
 
       <div className="max-w-4xl mx-auto text-center space-y-8 pt-20">
