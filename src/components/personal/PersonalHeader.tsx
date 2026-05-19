@@ -2,15 +2,34 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
+import { Sun, Moon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { personalNav } from "@/data/personal-content";
 import { useLang, type Lang } from "@/lib/language";
+import { useTheme } from "@/lib/theme";
 import { t } from "@/data/translations";
 
 const LANGS: { value: Lang; label: string }[] = [
   { value: "en", label: "EN" },
   { value: "fr", label: "FR" },
 ];
+
+function ThemeToggle() {
+  const { theme, toggle } = useTheme();
+  return (
+    <button
+      onClick={toggle}
+      aria-label="Toggle theme"
+      className={cn(
+        "flex items-center justify-center size-7 rounded-lg transition-all duration-200",
+        "bg-foreground/5 border border-foreground/10",
+        "text-muted-foreground hover:text-foreground hover:bg-foreground/8 hover:border-foreground/18"
+      )}
+    >
+      {theme === "dark" ? <Sun size={13} /> : <Moon size={13} />}
+    </button>
+  );
+}
 
 function LangToggle() {
   const { lang, toggle } = useLang();
@@ -38,9 +57,9 @@ function LangToggle() {
         onClick={() => setOpen((o) => !o)}
         className={cn(
           "flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-mono transition-all duration-200",
-          "bg-white/5 border border-white/10 backdrop-blur-md",
-          "text-muted-foreground hover:text-foreground hover:bg-white/8 hover:border-white/18",
-          open && "text-foreground bg-white/8 border-white/18"
+          "bg-foreground/5 border border-foreground/10 backdrop-blur-md",
+          "text-muted-foreground hover:text-foreground hover:bg-foreground/8 hover:border-foreground/18",
+          open && "text-foreground bg-foreground/8 border-foreground/18"
         )}
         aria-label="Switch language"
       >
@@ -63,8 +82,8 @@ function LangToggle() {
             transition={{ duration: 0.15, ease: "easeOut" }}
             className={cn(
               "absolute top-full left-0 mt-2 w-16 rounded-xl overflow-hidden z-50",
-              "bg-[oklch(0.12_0.012_265/80%)] backdrop-blur-xl",
-              "border border-white/10 shadow-[0_8px_32px_oklch(0_0_0/40%)]"
+              "bg-[oklch(0.12_0.012_265/80%)] light:bg-[oklch(0.97_0.005_265/95%)] backdrop-blur-xl",
+              "border border-foreground/10 shadow-[0_8px_32px_oklch(0_0_0/20%)]"
             )}
           >
             {LANGS.map(({ value, label }) => (
@@ -107,12 +126,12 @@ export function PersonalHeader() {
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-[oklch(0.08_0.015_265/90%)] backdrop-blur-xl border-b border-white/5"
+          ? "bg-[oklch(0.08_0.015_265/90%)] light:bg-[oklch(0.98_0.003_265/92%)] backdrop-blur-xl border-b border-white/5 light:border-black/8"
           : "bg-transparent"
       )}
     >
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between md:grid md:grid-cols-3">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <a
             href="/"
             className="text-sm font-semibold tracking-tight hover:opacity-70 transition-opacity"
@@ -120,6 +139,7 @@ export function PersonalHeader() {
             {personalNav.initials}
           </a>
           <LangToggle />
+          <ThemeToggle />
         </div>
 
         <nav className="hidden md:flex items-center justify-center gap-8 text-sm text-muted-foreground">
