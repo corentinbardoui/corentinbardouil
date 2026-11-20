@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev      # Dev server (auto-selects available port if 3000 is taken)
+npm run dev      # Dev server
 npm run build    # Production build
 npm run lint     # ESLint
 npx tsc --noEmit # Type-check without emitting
@@ -15,31 +15,27 @@ No test suite is configured yet.
 
 ## Architecture
 
-Single-page portfolio site (one route: `src/app/page.tsx`) assembled from section components.
+Bilingual site (FR at the root, EN under `/en`), ported from the validated design mockup « Site, verre version sombre ».
 
-**Data layer — single source of truth**
-All copy, links, and structured data live in `src/data/site-content.ts`. Every component imports directly from there. Exported types (`Service`, `PortfolioItem`, `SiteContent`) are inferred from the data shape — no separate interface files.
+**Routes** — two root layouts via route groups, so each language gets its own `<html lang>`:
+- `src/app/(fr)/` — `/`, `/rendez-vous`, `/conditions-de-vente`
+- `src/app/(en)/en/` — `/en`, `/en/book`, `/en/terms`
+- `?format=regard` on the booking pages preselects the one-hour second opinion.
 
-**Component layout**
-- `src/components/layout/` — `Header` (sticky, scroll-aware) and `Footer`
-- `src/components/sections/` — `Hero`, `Services`, `Portfolio`, `Contact` — one file per page section
-- `src/components/ui/` — Shadcn/ui primitives (do not edit manually)
+**Components** — `src/components/site/`:
+- `HomeFr` / `HomeEn`, `RendezVousFr` / `RendezVousEn` (client, format state), `ConditionsFr` / `ConditionsEn`.
+- These were generated from the mockup HTML and use inline styles on purpose, to stay pixel-faithful. Edit copy directly in these files.
+- `ScrollBar` shows the floating header (`.barre-flot`) after 120px of scroll.
 
-**Shadcn/ui version caveat**
-This project uses Shadcn v4 with `@base-ui/react` as the underlying primitive library. The `Button` component does **not** support the `asChild` prop. To render a button-styled link, use `buttonVariants` from `cn(buttonVariants({...}))` applied to an `<a>` tag directly.
+**Styling** — plain CSS, no Tailwind utilities in use:
+- `src/app/globals.css`: global rules for the home page (focus, CTA motion, responsive breakpoints).
+- `src/components/site/subpages.css`: booking and terms pages, scoped under `.p-rdv` and `.p-cgv`.
+- Palette: night `#04060C`, surface `#0B111D`, light `#F4F6F8`, text `#0A1633`, chartreuse `#CDF23C`, ice blues `#CFECF6` `#AEDFEF` `#86CFE8`.
 
-**Framer Motion**
-Animations use inline `initial/animate/transition` props rather than a shared `Variants` object, because the `ease` field in `Variants` must be typed as `Easing` (not `string`). The pattern used is:
-```ts
-function fadeUpVariant(delay: number) {
-  return {
-    initial: { opacity: 0, y: 24 },
-    animate: { opacity: 1, y: 0 },
-    transition: { delay, duration: 0.5, ease: [0.22, 0.61, 0.36, 1] as const },
-  };
-}
-```
-Section-level cards use `whileInView` + `viewport={{ once: true }}`.
+**Fonts** — self-hosted with `next/font/local` (`src/app/fonts.ts`): Geist (`--font-geist`) and Unbounded (`--font-unbounded`).
 
-**Styling**
-Tailwind v4 with CSS variables defined in `src/app/globals.css` using `oklch`. Theme tokens (`--primary`, `--muted`, `--border`, etc.) follow the Shadcn convention. No `tailwind.config.ts` — configuration is done via `@theme inline` in the CSS file.
+**Booking** — `src/data/booking.ts` reads `NEXT_PUBLIC_CAL_ECHANGE_URL` and `NEXT_PUBLIC_CAL_REGARD_URL`. When empty, the booking page shows an email fallback instead of the Cal.com embed.
+
+**Copy rules** — no em dashes, no « · », say « startups et entreprises », do not name clients or partners publicly.
+
+`src/components/ui/` holds unused shadcn primitives from the previous version (do not edit manually).
