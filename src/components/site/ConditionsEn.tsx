@@ -11,10 +11,10 @@ export function ConditionsEn() {
 <div className="cal" style={{ paddingBlock: "32px 64px", display: "flex", flexDirection: "column", gap: "16px" }}><h1>Terms of sale</h1><p className="chapo">These terms apply to the second opinion, which is for businesses only. If you would like to book as an individual, please email me first.</p></div>
 </div>
 <main className="cal">
-<p className="version">Version of{" "}<span className="aremplir">[publication date]</span>. This is a courtesy translation: the{" "}<Link href="/conditions-de-vente">French version</Link>{" "}prevails.</p>
+<p className="version">Version of{" "}20 November 2026. This is a courtesy translation: the{" "}<Link href="/conditions-de-vente">French version</Link>{" "}prevails.</p>
 <section>
 <h2>1. The provider</h2>
-<p>Corentin Bardouil, sole proprietor (entrepreneur individuel, EI), registered in France. SIREN{" "}<span className="aremplir">[number]</span>. Address:{" "}<span className="aremplir">[address]</span>. Email:{" "}<a href="mailto:corentin.bardouil@gmail.com">corentin.bardouil@gmail.com</a>.{" "}<span className="aremplir">[VAT number, or “VAT not applicable, article 293 B of the French Tax Code”]</span></p>
+<p>Corentin Bardouil, sole proprietor (entrepreneur individuel, EI), registered in France. SIRET 995 385 549 00010. Address:{" "}4 rue Louis Guilloux, 56890 Saint-Avé, France. Email:{" "}<a href="mailto:corentin.bardouil@gmail.com">corentin.bardouil@gmail.com</a>.{" "}VAT not applicable, article 293 B of the French Tax Code.</p>
 </section>
 <section>
 <h2>2. Scope</h2>
@@ -26,7 +26,7 @@ export function ConditionsEn() {
 </section>
 <section>
 <h2>4. Price and payment</h2>
-<p>The price is €199{" "}<span className="aremplir">[excluding VAT, including VAT, or VAT not applicable]</span>. It is paid by card at the time of booking, via Stripe, with no early payment discount. The invoice is sent by email.</p>
+<p>The price is €199{" "}(VAT not applicable). It is paid by card at the time of booking, via Stripe, with no early payment discount. The invoice is sent by email.</p>
 <p>Any late payment incurs penalties equal to three times the French statutory interest rate, plus a fixed recovery fee of €40.</p>
 </section>
 <section>
@@ -45,11 +45,11 @@ export function ConditionsEn() {
 </section>
 <section>
 <h2>8. Personal data</h2>
-<p>The information requested at booking is used to organize and invoice the session. It passes through Cal.com for booking and Stripe for payment, and is kept for{" "}<span className="aremplir">[period]</span>. You can access it, correct it or request its deletion, within the limits set by law, by writing to{" "}<a href="mailto:corentin.bardouil@gmail.com">corentin.bardouil@gmail.com</a>.</p>
+<p>The information requested at booking is used to organize and invoice the session. It passes through Cal.com for booking and Stripe for payment, and is kept for{" "}three years after our last exchange, and ten years for invoices. You can access it, correct it or request its deletion, within the limits set by law, by writing to{" "}<a href="mailto:corentin.bardouil@gmail.com">corentin.bardouil@gmail.com</a>.</p>
 </section>
 <section>
 <h2>9. Governing law and disputes</h2>
-<p>These terms are governed by French law. In the event of a dispute, the parties first seek an amicable solution. Failing that, the competent court is that of{" "}<span className="aremplir">[city]</span>.</p>
+<p>These terms are governed by French law. In the event of a dispute, the parties first seek an amicable solution. Failing that, the competent court is that of{" "}Vannes, France.</p>
 </section>
 </main>
 <footer>

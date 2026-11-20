@@ -11,10 +11,10 @@ export function ConditionsFr() {
 <div className="cal" style={{ paddingBlock: "32px 64px", display: "flex", flexDirection: "column", gap: "16px" }}><h1>Conditions de vente</h1><p className="chapo">Ces conditions s’appliquent au regard extérieur, réservé aux professionnels. Si vous souhaitez réserver à titre personnel, écrivez-moi avant de réserver.</p></div>
 </div>
 <main className="cal">
-<p className="version">Version du{" "}<span className="aremplir">[date de mise en ligne]</span></p>
+<p className="version">Version du{" "}20 novembre 2026</p>
 <section>
 <h2>1. Le prestataire</h2>
-<p>Corentin Bardouil, entrepreneur individuel (EI). SIREN{" "}<span className="aremplir">[numéro]</span>. Adresse :{" "}<span className="aremplir">[adresse]</span>. E-mail :{" "}<a href="mailto:corentin.bardouil@gmail.com">corentin.bardouil@gmail.com</a>.{" "}<span className="aremplir">[Numéro de TVA, ou « TVA non applicable, article 293 B du CGI »]</span></p>
+<p>Corentin Bardouil, entrepreneur individuel (EI). SIRET 995 385 549 00010. Adresse :{" "}4 rue Louis Guilloux, 56890 Saint-Avé. E-mail :{" "}<a href="mailto:corentin.bardouil@gmail.com">corentin.bardouil@gmail.com</a>.{" "}TVA non applicable, article 293 B du CGI.</p>
 </section>
 <section>
 <h2>2. Champ d’application</h2>
@@ -26,7 +26,7 @@ export function ConditionsFr() {
 </section>
 <section>
 <h2>4. Prix et paiement</h2>
-<p>Le prix est de 199 €{" "}<span className="aremplir">[HT, TTC ou net de TVA]</span>. Il se règle par carte au moment de la réservation, via Stripe, sans escompte pour paiement anticipé. La facture est envoyée par e-mail.</p>
+<p>Le prix est de 199 €{" "}net de TVA. Il se règle par carte au moment de la réservation, via Stripe, sans escompte pour paiement anticipé. La facture est envoyée par e-mail.</p>
 <p>Tout retard de paiement entraîne des pénalités égales à trois fois le taux d’intérêt légal, ainsi qu’une indemnité forfaitaire de recouvrement de 40 €.</p>
 </section>
 <section>
@@ -45,11 +45,11 @@ export function ConditionsFr() {
 </section>
 <section>
 <h2>8. Données personnelles</h2>
-<p>Les informations demandées à la réservation servent à organiser la séance et à la facturer. Elles transitent par Cal.com pour la réservation et Stripe pour le paiement, et sont conservées{" "}<span className="aremplir">[durée]</span>. Vous pouvez y accéder, les rectifier ou demander leur suppression, dans les limites prévues par la loi, en écrivant à{" "}<a href="mailto:corentin.bardouil@gmail.com">corentin.bardouil@gmail.com</a>.</p>
+<p>Les informations demandées à la réservation servent à organiser la séance et à la facturer. Elles transitent par Cal.com pour la réservation et Stripe pour le paiement, et sont conservées{" "}trois ans après le dernier échange, et dix ans pour les factures. Vous pouvez y accéder, les rectifier ou demander leur suppression, dans les limites prévues par la loi, en écrivant à{" "}<a href="mailto:corentin.bardouil@gmail.com">corentin.bardouil@gmail.com</a>.</p>
 </section>
 <section>
 <h2>9. Droit applicable et litiges</h2>
-<p>Ces conditions sont soumises au droit français. En cas de litige, les parties recherchent d’abord une solution amiable. À défaut, le tribunal compétent est celui de{" "}<span className="aremplir">[ville]</span>.</p>
+<p>Ces conditions sont soumises au droit français. En cas de litige, les parties recherchent d’abord une solution amiable. À défaut, le tribunal compétent est celui de{" "}Vannes.</p>
 </section>
 </main>
 <footer>
