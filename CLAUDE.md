@@ -34,7 +34,7 @@ Bilingual site (FR at the root, EN under `/en`), ported from the validated desig
 
 **Fonts** — self-hosted with `next/font/local` (`src/app/fonts.ts`): Geist (`--font-geist`) and Unbounded (`--font-unbounded`).
 
-**Booking** — `src/data/booking.ts` holds the two Cal.com event links (`corentin-bardouil/30min`, `corentin-bardouil/regard-exterieur`), embedded with `@calcom/embed-react`. Override with `NEXT_PUBLIC_CAL_ECHANGE` / `NEXT_PUBLIC_CAL_REGARD`.
+**Booking** — `src/data/booking.ts` holds the two Cal.com event links (`corentin-bardouil/premier-echange`, `corentin-bardouil/regard-exterieur`), embedded with `@calcom/embed-react`. Override with `NEXT_PUBLIC_CAL_ECHANGE` / `NEXT_PUBLIC_CAL_REGARD`.
 
 **Copy rules** — no em dashes, no « · », say « startups et entreprises », do not name clients or partners publicly.
 

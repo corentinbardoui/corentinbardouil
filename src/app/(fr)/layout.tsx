@@ -25,7 +25,7 @@ export const viewport: Viewport = { themeColor: "#04060C" };
 
 export default function FrLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${geist.variable} ${unbounded.variable}`}>
+    <html lang="fr" data-scroll-behavior="smooth" className={`${geist.variable} ${unbounded.variable}`}>
       <body>{children}</body>
     </html>
   );

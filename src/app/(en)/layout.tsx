@@ -25,7 +25,7 @@ export const viewport: Viewport = { themeColor: "#04060C" };
 
 export default function EnLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable} ${unbounded.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${geist.variable} ${unbounded.variable}`}>
       <body>{children}</body>
     </html>
   );
