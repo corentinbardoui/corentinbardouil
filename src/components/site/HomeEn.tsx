@@ -9,14 +9,14 @@ export function HomeEn() {
       <div style={{ width: "100%", background: "#F4F6F8", color: "#0A1633", fontFamily: "var(--font-geist), system-ui, sans-serif", overflow: "hidden" }}>
 <a className="evite" href="#offre">Skip to content</a>
 <div className="barre-flot" aria-label="Scroll navigation">
-<Link href="/en" style={{ fontFamily: "var(--font-unbounded), var(--font-geist), sans-serif", fontSize: "14px", lineHeight: "20px", fontWeight: "600", letterSpacing: "-0.03em", whiteSpace: "nowrap" }}>corentin bardouil</Link>
+<a href="#top" style={{ fontFamily: "var(--font-unbounded), var(--font-geist), sans-serif", fontSize: "14px", lineHeight: "20px", fontWeight: "600", letterSpacing: "-0.03em", whiteSpace: "nowrap" }}>corentin bardouil</a>
 <nav className="barre-liens" aria-label="Navigation" style={{ display: "flex", alignItems: "center", gap: "24px", fontSize: "15px" }}><a href="#offre">What I offer</a><a href="#profil">About me</a><a href="#projets">Projects</a></nav>
 <Link className="cta" href="/en/book" style={{ display: "inline-flex", alignItems: "center", gap: "10px", minHeight: "44px", padding: "0 18px 0 16px", background: "#CDF23C", color: "#0A1633", fontSize: "15px", fontWeight: "500", letterSpacing: "-0.015em", whiteSpace: "nowrap", borderRadius: "2px", boxShadow: "inset 0 1px 0 #ffffff66, 0 3px 0 #81A008" }}><span>Book a call</span><span className="fl" aria-hidden="true" style={{ display: "inline-flex", lineHeight: "0" }}><svg width="20" height="12" viewBox="0 0 26 16" fill="none" aria-hidden="true"><path d="M1 8H23" stroke="#0A1633" strokeWidth="2.6" /><path d="M16 1.5L23.5 8L16 14.5" stroke="#0A1633" strokeWidth="2.6" /></svg></span></Link>
 </div>
 <div style={{ position: "relative", background: "#04060C", color: "#F4F6F8" }}>
 <img src="/images/verre-hero.jpg" className="fond-verre" alt="" aria-hidden="true" style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", objectPosition: "right center" }} />
 <header style={{ position: "relative", zIndex: "2", maxWidth: "1240px", margin: "0 auto", boxSizing: "border-box", padding: "20px 24px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
-<Link href="/en" style={{ fontFamily: "var(--font-unbounded), var(--font-geist), sans-serif", fontSize: "14px", lineHeight: "20px", fontWeight: "600", letterSpacing: "-0.03em" }}>corentin bardouil</Link>
+<a href="#top" style={{ fontFamily: "var(--font-unbounded), var(--font-geist), sans-serif", fontSize: "14px", lineHeight: "20px", fontWeight: "600", letterSpacing: "-0.03em" }}>corentin bardouil</a>
 <nav className="liens-haut" aria-label="Main navigation" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "12px 24px", fontSize: "15px" }}>
 <a className="lien-nav" href="#offre">What I offer</a>
 <a className="lien-nav" href="#profil">About me</a>
