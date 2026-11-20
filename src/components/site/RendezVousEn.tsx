@@ -1,5 +1,6 @@
 "use client";
 // Généré depuis la page « Prendre rendez-vous » (nouveau design).
+import Cal from "@calcom/embed-react";
 import Link from "next/link";
 import { useState } from "react";
 import { calLinks } from "@/data/booking";
@@ -8,7 +9,7 @@ type Format = "echange" | "regard";
 
 export function RendezVousEn({ initialFormat = "echange" }: { initialFormat?: Format }) {
   const [format, setFormat] = useState<Format>(initialFormat);
-  const calUrl = format === "regard" ? calLinks.regard : calLinks.echange;
+  const calLink = format === "regard" ? calLinks.regard : calLinks.echange;
   return (
     <div className="p-rdv">
       
@@ -35,8 +36,8 @@ export function RendezVousEn({ initialFormat = "echange" }: { initialFormat?: Fo
 <section className="bloc" style={{ gap: "24px" }}>
 <h2>2. Pick a time</h2>
 <div className="creneau">
-{calUrl ? (
-          <div className="agenda agenda-live"><iframe src={calUrl} title={format === "regard" ? 'Calendar: second opinion, 1 hour' : 'Calendar: intro call, 30 minutes'} loading="lazy" /></div>
+{calLink ? (
+          <div className="agenda agenda-live"><Cal key={format} namespace={format} calLink={calLink} title={format === "regard" ? 'Calendar: second opinion, 1 hour' : 'Calendar: intro call, 30 minutes'} style={{ width: "100%", height: "100%", overflow: "auto" }} config={{ layout: "month_view", theme: "light" }} /></div>
         ) : (
           <div className="agenda" aria-live="polite">
             <strong>{format === "regard" ? 'Calendar: second opinion, 1 hour' : 'Calendar: intro call, 30 minutes'}</strong>

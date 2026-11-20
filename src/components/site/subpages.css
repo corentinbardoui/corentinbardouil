@@ -38,6 +38,8 @@
 .p-rdv .agenda{flex:999 1 560px;min-width:0;min-height:520px;box-sizing:border-box;padding:32px;background:var(--surface);color:var(--clair);border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center}
 .p-rdv .agenda p{margin:0;max-width:380px;font-size:16px;line-height:24px;color:var(--gris)}
 .p-rdv .agenda strong{font-size:20px;line-height:26px;font-weight:500;color:var(--clair)}
+.p-rdv .agenda-live{display:block;padding:0;background:#FFFFFF;text-align:left;min-height:680px;overflow:hidden}
+.p-rdv .agenda-live > div{width:100%;min-height:680px}
 .p-rdv .etapes{flex:1 1 340px;min-width:0;box-sizing:border-box;padding:28px;background:#FFFFFF;border-radius:2px;display:flex;flex-direction:column;gap:24px}
 .p-rdv .etapes ul{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:6px;font-size:16px;line-height:24px}
 .p-rdv .etapes p{margin:0;font-size:16px;line-height:24px}
