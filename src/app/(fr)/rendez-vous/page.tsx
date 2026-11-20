@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { RendezVousFr } from "@/components/site/RendezVousFr";
 
 export const metadata: Metadata = {
-  title: "Prendre rendez-vous, Corentin Bardouil",
+  title: "Prendre rendez-vous | Corentin Bardouil",
   description: "Premier échange de 30 minutes, gratuit, ou regard extérieur d’une heure à 199 €.",
   alternates: { canonical: "/rendez-vous", languages: { fr: "/rendez-vous", en: "/en/book" } },
 };

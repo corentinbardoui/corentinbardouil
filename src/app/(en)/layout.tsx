@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "/en",
     siteName: "Corentin Bardouil",
-    title: meta.en.title,
+    title: meta.en.ogTitle,
     description: meta.en.description,
     images: [{ url: "/og-en.png", width: 1200, height: 630, alt: meta.en.title }],
   },
