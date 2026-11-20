@@ -69,7 +69,7 @@ export function RendezVousFr({ initialFormat = "echange" }: { initialFormat?: Fo
 <div className="cal" style={{ paddingTop: "32px" }}><span className="logo">corentin bardouil</span></div>
 <div className="cal" style={{ paddingBlock: "16px 24px", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "8px 16px", fontSize: "15px" }}>
 <span style={{ color: "var(--gris)" }}>Paris, Bretagne</span>
-<div className="pied"><a href="https://www.linkedin.com/in/corentin-bardouil">LinkedIn</a><a href="https://github.com/corentinbardouil">GitHub</a><a href="mailto:corentin.bardouil@gmail.com">E-mail</a><Link href="/conditions-de-vente">Conditions de vente</Link></div>
+<div className="pied"><a href="https://www.linkedin.com/in/corentin-bardouil">LinkedIn</a><a href="https://github.com/corentinbardoui">GitHub</a><a href="mailto:corentin.bardouil@gmail.com">E-mail</a><Link href="/conditions-de-vente">Conditions de vente</Link></div>
 </div>
 </footer>
 

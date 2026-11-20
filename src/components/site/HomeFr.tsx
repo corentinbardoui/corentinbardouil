@@ -201,7 +201,7 @@ export function HomeFr() {
 <div style={{ maxWidth: "1240px", margin: "0 auto", boxSizing: "border-box", padding: "32px 24px 0", fontFamily: "var(--font-unbounded), var(--font-geist), sans-serif", fontSize: "14px", lineHeight: "20px", fontWeight: "600", letterSpacing: "-0.03em", whiteSpace: "nowrap" }}>corentin bardouil</div>
 <div style={{ maxWidth: "1240px", margin: "0 auto", boxSizing: "border-box", padding: "24px", display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "16px", fontSize: "15px" }}>
 <span style={{ color: "#AEB6C6" }}>Paris, Bretagne</span>
-<div className="pied" style={{ display: "flex", flexWrap: "wrap", columnGap: "24px" }}><a href="https://www.linkedin.com/in/corentin-bardouil">LinkedIn</a><a href="https://github.com/corentinbardouil">GitHub</a><a href="mailto:corentin.bardouil@gmail.com">E-mail</a><Link href="/conditions-de-vente">Conditions de vente</Link></div>
+<div className="pied" style={{ display: "flex", flexWrap: "wrap", columnGap: "24px" }}><a href="https://www.linkedin.com/in/corentin-bardouil">LinkedIn</a><a href="https://github.com/corentinbardoui">GitHub</a><a href="mailto:corentin.bardouil@gmail.com">E-mail</a><Link href="/conditions-de-vente">Conditions de vente</Link></div>
 </div>
 </footer>
 </div>

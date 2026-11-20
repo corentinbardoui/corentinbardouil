@@ -56,7 +56,7 @@ export function ConditionsEn() {
 <div className="cal" style={{ paddingTop: "32px" }}><span className="logo">corentin bardouil</span></div>
 <div className="cal" style={{ paddingBlock: "16px 24px", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "8px 16px", fontSize: "15px" }}>
 <span style={{ color: "var(--gris)" }}>Paris and Brittany, France</span>
-<div className="pied"><a href="https://www.linkedin.com/in/corentin-bardouil">LinkedIn</a><a href="https://github.com/corentinbardouil">GitHub</a><a href="mailto:corentin.bardouil@gmail.com">Email</a><Link href="/en/terms">Terms of sale</Link></div>
+<div className="pied"><a href="https://www.linkedin.com/in/corentin-bardouil">LinkedIn</a><a href="https://github.com/corentinbardoui">GitHub</a><a href="mailto:corentin.bardouil@gmail.com">Email</a><Link href="/en/terms">Terms of sale</Link></div>
 </div>
 </footer>
 
