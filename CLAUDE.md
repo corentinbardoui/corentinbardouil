@@ -36,6 +36,14 @@ Bilingual site (FR at the root, EN under `/en`), ported from the validated desig
 
 **Booking** — `src/data/booking.ts` holds the two Cal.com event links (`corentin-bardouil/premier-echange`, `corentin-bardouil/regard-exterieur`), embedded with `@calcom/embed-react`. Override with `NEXT_PUBLIC_CAL_ECHANGE` / `NEXT_PUBLIC_CAL_REGARD`.
 
+**SEO** — page titles, descriptions and paths live in `src/data/site.ts` (`pages`).
+- Every page exports `metadata = pageMetadata(page, lang)` from `src/lib/seo.ts`: canonical, hreflang (`fr`, `en`, `x-default` → FR) and Open Graph / Twitter. Layouts only hold defaults, so a new page must declare its own metadata, or it would have no canonical.
+- `SITE_URL` is `https://www.corentinbardouil.com`: Vercel redirects the bare domain to www, so absolute URLs must use www.
+- `src/app/robots.ts`, `sitemap.ts` (built from `pages`, `lastmod` = `LAST_UPDATE`, update it when copy changes) and `manifest.ts`.
+- Home pages render Person + WebSite JSON-LD (`homeJsonLd`), limited to what the page shows.
+- Icons: `src/app/favicon.ico`, `icon.png`, `apple-icon.png`, plus `public/icon-192.png` for the manifest. Keep their URLs stable.
+- Images below the fold use `loading="lazy"`; only the hero background is preloaded (`fetchPriority="high"`).
+
 **Copy rules** — no em dashes, no « · », say « startups et entreprises », do not name clients or partners publicly.
 
 `src/components/ui/` holds unused shadcn primitives from the previous version (do not edit manually).
