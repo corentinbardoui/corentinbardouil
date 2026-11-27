@@ -58,7 +58,7 @@ export const companyForm = {
     thanks: "Merci, c’est bien reçu.",
     next: "On vous recontacte sous 48 heures pour caler un premier échange de 15 minutes.",
     // Message absent des maquettes, affiché si l'envoi échoue.
-    error: "L’envoi n’a pas abouti. Réessayez, ou écrivez-moi à",
+    error: "L’envoi n’a pas abouti. Réessayez, ou écrivez à",
     subject: "Demande « Pour votre entreprise »",
   },
   en: {
@@ -75,7 +75,7 @@ export const companyForm = {
     privacyNote: "Your details are only used to get back to you about your request.",
     thanks: "Thank you, we’ve received it.",
     next: "We’ll get back to you within 48 hours to schedule a first 15-minute call.",
-    error: "Your request could not be sent. Please try again, or email me at",
+    error: "Your request could not be sent. Please try again, or email",
     subject: "“For your company” request",
   },
 } satisfies Record<Lang, Record<string, string>>;

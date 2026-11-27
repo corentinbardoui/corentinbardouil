@@ -62,7 +62,6 @@ export function CompanyDialogProvider({ lang, children }: { lang: Lang; children
     const data = new FormData(e.currentTarget);
     setStatus("sending");
     try {
-      if (!FORMSPREE_ID) throw new Error("Identifiant Formspree manquant");
       const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: "POST",
         headers: { Accept: "application/json" },
