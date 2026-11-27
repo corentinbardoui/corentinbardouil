@@ -148,7 +148,7 @@ export const home: Record<Lang, HomeCopy> = {
       note: "Premier échange de 15 minutes, offert.",
       examplesLabel: "Exemples de tâches",
       examples: [
-        { label: "Finance", title: "Saisir les factures fournisseurs", text: "Rapprochées des bons de commande" },
+        { label: "Pilotage", title: "Préparer le reporting mensuel", text: "Chiffres réunis, écarts commentés" },
         { label: "Commercial", title: "Préparer la fiche prospect", text: "Avant chaque rendez-vous" },
         { label: "Service client", title: "Répondre aux demandes clients", text: "Triées, avec une réponse à valider" },
       ],
@@ -259,7 +259,7 @@ export const home: Record<Lang, HomeCopy> = {
       note: "Free 15-minute first call.",
       examplesLabel: "Example tasks",
       examples: [
-        { label: "Finance", title: "Enter supplier invoices", text: "Matched against purchase orders" },
+        { label: "Management", title: "Prepare the monthly report", text: "Figures gathered, variances explained" },
         { label: "Sales", title: "Prepare the prospect brief", text: "Before every meeting" },
         { label: "Customer service", title: "Answer customer requests", text: "Sorted, with a reply ready to approve" },
       ],
