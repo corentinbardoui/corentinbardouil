@@ -51,6 +51,6 @@ Bilingual showcase site (FR at the root, EN under `/en`), reproduced from the de
 - `SITE_URL` is `https://www.corentinbardouil.com`: Vercel redirects the bare domain to www, so absolute URLs must use www.
 - `robots.ts`, `sitemap.ts` (built from `pages`, `lastmod` = `LAST_UPDATE`, update it when copy changes) and `manifest.ts`.
 - Home pages render Person + WebSite JSON-LD (`homeJsonLd`), limited to what the page shows.
-- Icons: `src/app/favicon.ico`, `icon.png`, `icon.svg`, `apple-icon.png`, plus `public/icon-192.png` for the manifest. Keep their URLs stable.
+- Icons: tab icons are the plain frost « c » (`src/app/favicon.ico`, `icon.png`, `icon.svg`), legible at 16px. Large icons use the framed version (`src/app/apple-icon.png`, `public/icon-192.png` and `icon-512.png` for the manifest). Keep their URLs stable.
 
 **Copy rules**: do not rewrite validated copy, no em dashes, no « · », say « entreprises » rather than « PME », never « agents IA », do not name clients, partners or the unannounced company anywhere.
