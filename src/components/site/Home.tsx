@@ -90,9 +90,7 @@ export function Home({ lang }: { lang: Lang }) {
       <section id="qui" className="section">
         <div className="wrap qui">
           <div className="portrait">
-            <div aria-hidden="true" className="portrait-fond">
-              <Gradient variant="haut" />
-            </div>
+            <div aria-hidden="true" className="portrait-fond" />
             <div className="portrait-image">
               <Image
                 src="/images/portrait-corentin.jpg"
