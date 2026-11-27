@@ -48,8 +48,6 @@ type HomeCopy = {
     formatLabel: string;
     format: string[];
     topics: { title: string; items: string[] }[];
-    outside: string;
-    talk: string;
     howTitle: string;
     steps: { title: string; text: string }[];
     book: string;
@@ -74,12 +72,9 @@ export const home: Record<Lang, HomeCopy> = {
     firstCallTag: "Premier échange offert",
     price: "199 €",
     doors: {
-      content: { title: "Suivre ce que je partage", desc: "Des posts, des carrousels et des vidéos, sur LinkedIn." },
-      company: { title: "Intégrer l’IA dans votre entreprise", desc: "Avec mon associé, c’est notre métier." },
-      session: {
-        title: "Échanger avec moi en 1:1",
-        desc: "Une heure pour avancer sur un projet, votre usage de l’IA ou votre vision tech et business.",
-      },
+      content: { title: "L’IA, vue du terrain", desc: "Comment l’IA change nos métiers, et comment l’utiliser concrètement." },
+      company: { title: "Mettez l’IA au travail", desc: "Intégrée à vos process, avec vos équipes, là où elle fait gagner du temps." },
+      session: { title: "Avancez en une heure", desc: "Un sujet précis, et vous repartez avec vos prochaines étapes, par écrit." },
     },
     portraitAlt: "Portrait de Corentin Bardouil",
     aboutTitle: "Qui je suis",
@@ -114,17 +109,17 @@ export const home: Record<Lang, HomeCopy> = {
         Aujourd’hui, ces trois métiers se rejoignent : avec mon associé,{" "}
         <strong>nous aidons les entreprises à intégrer l’IA dans leurs process</strong>.{" "}
         {SHOW_CONTENT ? (
-          <>Et ici, je partage ce que j’apprends en chemin, y compris ce qui ne marche pas.</>
+          <>Et ici, je partage ce que j’apprends en chemin, y compris ce qui ne fonctionne pas.</>
         ) : (
           <>
-            Et sur <Linkedin>LinkedIn</Linkedin>, je partage ce que j’apprends en chemin, y compris ce qui ne marche pas.
+            Et sur <Linkedin>LinkedIn</Linkedin>, je partage ce que j’apprends en chemin, y compris ce qui ne fonctionne pas.
           </>
         )}
       </>
     ),
     sharing: {
       title: "Ce que je partage",
-      lead: "Ce que l’IA change concrètement pour les entreprises : les annonces qui comptent, des cas d’usage métier par métier et des retours d’expérience, y compris sur ce qui ne fonctionne pas.",
+      lead: "Comment l’IA change nos métiers, les choix qu’elle impose aux dirigeants, et comment l’utiliser concrètement.",
       linkedinTitle: "Sur LinkedIn",
       linkedinText: "Des posts, des carrousels et des vidéos, tirés du terrain.",
       follow: "Suivre sur LinkedIn",
@@ -168,8 +163,6 @@ export const home: Record<Lang, HomeCopy> = {
         { title: "L’IA dans votre activité", items: ["Ce que l’IA change pour votre métier", "Vos outils et vos usages au quotidien", "Challenger une idée de produit IA"] },
         { title: "Votre vision tech et business", items: ["Relire votre feuille de route produit", "Arbitrer un choix technique structurant", "Aligner la tech sur votre modèle économique"] },
       ],
-      outside: "Un regard extérieur sur votre réflexion, ni un diagnostic ni une mission. Intégrer l’IA dans les process de votre entreprise, c’est une autre offre :",
-      talk: "parlons-en",
       howTitle: "Comment ça se passe",
       steps: [
         { title: "Choisissez un créneau", text: "Dans l’agenda, selon vos disponibilités." },
@@ -189,12 +182,9 @@ export const home: Record<Lang, HomeCopy> = {
     firstCallTag: "Free first call",
     price: "€199",
     doors: {
-      content: { title: "Follow what I share", desc: "Posts, carousels and videos, on LinkedIn." },
-      company: { title: "Bring AI into your company", desc: "It’s what my partner and I do." },
-      session: {
-        title: "A 1:1 session with me",
-        desc: "One hour to move forward on a project, your use of AI or your tech and business vision.",
-      },
+      content: { title: "AI, from the field", desc: "How AI is changing our jobs, and how to put it to use in practice." },
+      company: { title: "Put AI to work", desc: "Built into your processes, with your teams, where it truly saves time." },
+      session: { title: "Move forward in an hour", desc: "One specific topic, and you leave with your next steps, in writing." },
     },
     portraitAlt: "Portrait of Corentin Bardouil",
     aboutTitle: "About me",
@@ -240,7 +230,7 @@ export const home: Record<Lang, HomeCopy> = {
     ),
     sharing: {
       title: "What I share",
-      lead: "What AI actually changes for companies: the announcements that matter, use cases job by job, and lessons from the field, including what doesn’t work.",
+      lead: "How AI is changing our jobs, the choices it puts in front of leaders, and how to put it to use in practice.",
       linkedinTitle: "On LinkedIn",
       linkedinText: "Posts, carousels and videos, drawn from the field.",
       follow: "Follow on LinkedIn",
@@ -284,8 +274,6 @@ export const home: Record<Lang, HomeCopy> = {
         { title: "AI in your business", items: ["What AI changes in your line of work", "Your tools and day-to-day practices", "Stress-testing an AI product idea"] },
         { title: "Your tech and business vision", items: ["Reviewing your product roadmap", "Making a major technical call", "Aligning tech with your business model"] },
       ],
-      outside: "An outside view on your thinking, neither an audit nor a project. Bringing AI into your company’s processes is a different offer:",
-      talk: "let’s talk",
       howTitle: "How it works",
       steps: [
         { title: "Pick a time slot", text: "In the calendar, whenever suits you." },

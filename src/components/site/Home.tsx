@@ -217,26 +217,17 @@ export function Home({ lang }: { lang: Lang }) {
             </ul>
           </div>
 
-          <div className="themes">
-            <div className="sujets">
-              {session.topics.map((topic) => (
-                <div key={topic.title}>
-                  <h3>{topic.title}</h3>
-                  <ul>
-                    {topic.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-            <p>
-              {session.outside}{" "}
-              <CompanyButton className="lien-fl">
-                {session.talk}
-                <Arrow type="droite" />
-              </CompanyButton>
-            </p>
+          <div className="sujets">
+            {session.topics.map((topic) => (
+              <div key={topic.title}>
+                <h3>{topic.title}</h3>
+                <ul>
+                  {topic.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           <div className="panneau">

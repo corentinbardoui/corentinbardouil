@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
 import { CompanyButton, CompanyDialogProvider } from "./CompanyDialog";
 import { MobileMenu } from "./MobileMenu";
-import { FloatingBar } from "./Scroll";
+import { Header } from "./Scroll";
 import { chrome } from "@/data/chrome";
 import { EMAIL, PROFILES, SHOW_CONTENT, pages, type Lang, type PageKey } from "@/data/site";
 
@@ -48,48 +48,42 @@ export function SiteShell({ lang, page, children }: { lang: Lang; page: PageKey;
     </span>
   );
 
-  // Même contenu pour l'en-tête et pour la barre flottante.
-  const header = (
-    <>
-      <a href={nameHref} className="marque">
-        corentin bardouil
-      </a>
-      <nav aria-label={t.nav}>
-        <span className="nav-liens">
-          {links.map((l) => (
-            <a key={l.href} href={l.href}>
-              {l.label}
-            </a>
-          ))}
-          {languages}
-        </span>
-        <CompanyButton className="entete-entreprise">{t.company}</CompanyButton>
-        <MobileMenu>
-          <summary>
-            Menu
-            <svg aria-hidden="true" width="16" height="10" viewBox="0 0 16 10" fill="none">
-              <path d="M0 1H16" stroke="currentColor" strokeWidth="1.8" />
-              <path d="M0 9H16" stroke="currentColor" strokeWidth="1.8" />
-            </svg>
-          </summary>
-          <div className="menu-liste">
+  return (
+    <CompanyDialogProvider lang={lang}>
+      <Header>
+        <a href={nameHref} className="marque">
+          corentin bardouil
+        </a>
+        <nav aria-label={t.nav}>
+          <span className="nav-liens">
             {links.map((l) => (
-              <a key={l.href} className="menu-lien" href={l.href}>
+              <a key={l.href} href={l.href}>
                 {l.label}
               </a>
             ))}
-            <div className="menu-langues">{languages}</div>
-            <CompanyButton className="menu-lien menu-entreprise">{t.company}</CompanyButton>
-          </div>
-        </MobileMenu>
-      </nav>
-    </>
-  );
-
-  return (
-    <CompanyDialogProvider lang={lang}>
-      <header className="wrap entete">{header}</header>
-      <FloatingBar>{header}</FloatingBar>
+            {languages}
+          </span>
+          <CompanyButton className="entete-entreprise">{t.company}</CompanyButton>
+          <MobileMenu>
+            <summary>
+              Menu
+              <svg aria-hidden="true" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                <path d="M0 1H16" stroke="currentColor" strokeWidth="1.8" />
+                <path d="M0 9H16" stroke="currentColor" strokeWidth="1.8" />
+              </svg>
+            </summary>
+            <div className="menu-liste">
+              {links.map((l) => (
+                <a key={l.href} className="menu-lien" href={l.href}>
+                  {l.label}
+                </a>
+              ))}
+              <div className="menu-langues">{languages}</div>
+              <CompanyButton className="menu-lien menu-entreprise">{t.company}</CompanyButton>
+            </div>
+          </MobileMenu>
+        </nav>
+      </Header>
 
       <main>{children}</main>
 

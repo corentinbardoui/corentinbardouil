@@ -20,14 +20,23 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid cur
 /* Mouvements */
 .fl{display:inline-flex;transition:transform .2s cubic-bezier(.65,0,.25,1)}
 .porte{transition:background-color .2s ease}
-.porte:hover .fl,.cta:hover .fl,.lien-fl:hover .fl,.bouton-clair:hover .fl{transform:translateX(6px)}
+.porte:hover .fl,.cta:hover .fl,.bouton-clair:hover .fl{transform:translateX(6px)}
 .porte:hover .fl-ext,.ext:hover .fl{transform:translate(3px,-3px)}
 .porte:hover .fl.fl-bas{transform:translateY(4px)}
 .cta{transition:transform .12s ease}
 .cta:active{transform:translateY(3px)}
 
-/* En-tête */
-.entete{padding-top:24px;padding-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+/* En-tête. En haut de page, il suit les maquettes. Au défilement, ce même élément reste à 12 px du haut
+   et devient la barre : sa hauteur plus sa marge basse restent constantes, la page ne bouge pas. */
+.entete{position:sticky;top:-100px;z-index:40;width:calc(min(100%,1336px) - 96px);margin:16px auto;box-sizing:border-box;padding:8px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;border-radius:2px;background:rgba(255,255,255,0);box-shadow:inset 0 0 0 1px rgba(232,235,242,0),0 12px 28px -10px rgba(4,6,12,0),0 1px 2px rgba(10,22,51,0)}
+.entete.flottante{top:12px;margin-bottom:20px;padding:8px 8px 8px 20px;background:#FFFFFF;box-shadow:inset 0 0 0 1px #E8EBF2,0 12px 28px -10px rgba(4,6,12,0.4),0 1px 2px rgba(10,22,51,0.12)}
+.entete,.entete .marque,.entete nav,.nav-liens,.entete-entreprise,.langues>a,.langues>.active,.menu-mobile>summary{transition:top .4s cubic-bezier(.16,1,.3,1),padding .4s cubic-bezier(.16,1,.3,1),margin .4s cubic-bezier(.16,1,.3,1),gap .4s cubic-bezier(.16,1,.3,1),font-size .4s cubic-bezier(.16,1,.3,1),min-height .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease,background-color .2s ease,color .2s ease}
+.flottante .marque{font-size:14px}
+.flottante nav,.flottante .nav-liens{gap:24px}
+.flottante .nav-liens{font-size:14px}
+.flottante .entete-entreprise{min-height:40px;padding:0 14px;font-size:14px}
+.flottante .langues>a,.flottante .langues>.active{padding-top:8px;padding-bottom:8px}
+.flottante .menu-mobile>summary{min-height:40px}
 .entete .marque{text-decoration:none;white-space:nowrap}
 .entete nav{display:flex;align-items:center;gap:32px}
 .nav-liens{display:flex;align-items:center;gap:32px;font-size:15px}
@@ -49,14 +58,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid cur
 .menu-lien{display:flex;align-items:center;min-height:48px;padding:0 14px;font-size:17px;line-height:24px;text-decoration:none;transition:background-color .2s ease}
 .menu-lien:hover{background:#F4F6F8;color:#0A1633}
 .menu-entreprise{width:100%;box-sizing:border-box;border:0;border-top:1px solid #E8EBF2;background:none;text-align:left}
-
-/* En-tête flottant : même largeur que le contenu de l'en-tête. Les fenêtres (entreprise, agenda) passent au-dessus. */
-.barre-flot{position:fixed;top:12px;left:50%;z-index:40;width:calc(min(100%,1336px) - 96px);box-sizing:border-box;padding:7px 7px 7px 19px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:#FFFFFF;border:1px solid #E8EBF2;border-radius:2px;box-shadow:0 12px 28px -10px rgba(4,6,12,0.4),0 1px 2px rgba(10,22,51,0.12);transform:translate(-50%,-160%);opacity:0;visibility:hidden;transition:transform .4s cubic-bezier(.16,1,.3,1),opacity .2s ease,visibility .4s}
-.barre-flot.visible{transform:translate(-50%,0);opacity:1;visibility:visible}
-.barre-flot .marque{font-size:14px;text-decoration:none;white-space:nowrap}
-.barre-flot nav{display:flex;align-items:center;gap:24px}
-.barre-flot .nav-liens{gap:24px;font-size:14px;white-space:nowrap}
-.barre-flot .entete-entreprise{min-height:40px;padding:0 14px;font-size:14px;white-space:nowrap}
 
 /* Dégradés et cadre de visée */
 .degrade{position:absolute;inset:0}
@@ -90,9 +91,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid cur
 .porte-tete>span:last-child{display:inline-flex;align-items:center;gap:10px;color:#0A1633;font-weight:500}
 .porte-corps{display:flex;flex-direction:column;gap:6px}
 .porte-titre{font-size:24px;line-height:30px;font-weight:500;letter-spacing:-0.035em}
-.porte-desc{font-size:15px;line-height:22px;color:#3C4A6E}
-.espace-hero{height:48px;display:flex;align-items:center;justify-content:center}
-.indice{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;color:#0A1633;transition:opacity .2s ease,visibility .2s}
+.porte-desc{min-height:44px;font-size:15px;line-height:22px;color:#3C4A6E}
+.espace-hero{position:relative;height:48px}
+.indice{position:absolute;z-index:1;left:calc(50% - 22px);top:55px;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;color:#0A1633;transition:opacity .2s ease,visibility .2s}
 .indice:hover{color:#0A1633}
 .indice svg{animation:indice 1.8s ease-in-out infinite}
 .indice.efface{opacity:0;visibility:hidden}
@@ -180,9 +181,6 @@ a.carte:hover .titre-carte{text-decoration:underline;text-underline-offset:4px}
 .formats{display:flex;flex-wrap:wrap;gap:8px}
 .formats li{display:inline-flex;align-items:center;height:36px;padding:0 14px;box-sizing:border-box;border:1px solid #C9D0DF;border-radius:2px;font-size:15px}
 .formats li:last-child{font-weight:500}
-.themes{display:flex;flex-direction:column;gap:28px}
-.themes>p{color:#3C4A6E}
-.lien-fl{display:inline-flex;align-items:center;gap:6px;padding:0;border:0;background:none;color:#0A1633;font-weight:500;text-decoration:underline;text-underline-offset:3px}
 .sujets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
 .sujets>div{display:flex;flex-direction:column;gap:14px}
 .sujets h3{padding-top:18px;border-top:2px solid #0A1633;font-size:22px;line-height:28px;font-weight:500;letter-spacing:-0.03em}
@@ -272,23 +270,31 @@ a.carte:hover .titre-carte{text-decoration:underline;text-underline-offset:4px}
 .etapes{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
+/* Petit écran d'ordinateur : les trois cartes restent alignées. */
+@media (min-width:1041px) and (max-width:1180px){
+.porte-titre{font-size:21px;line-height:28px}
+.porte-desc{min-height:66px}
+}
+
 /* Tablette étroite : l'en-tête et la barre se resserrent pour tenir sur une ligne, « Contenus » compris. */
 @media (max-width:900px){
 .entete{gap:16px}
 .entete nav,.nav-liens{gap:16px}
 .nav-liens{font-size:14px;white-space:nowrap}
 .entete-entreprise{padding:0 12px;font-size:14px;white-space:nowrap}
-.barre-flot{gap:12px}
-.barre-flot .marque{font-size:13px}
-.barre-flot nav,.barre-flot .nav-liens{gap:10px}
-.barre-flot .nav-liens{font-size:13px}
-.barre-flot .entete-entreprise{padding:0 10px;font-size:13px}
+.entete.flottante{gap:12px;padding-left:12px}
+.flottante .marque{font-size:13px}
+.flottante nav,.flottante .nav-liens{gap:10px}
+.flottante .nav-liens{font-size:13px}
+.flottante .entete-entreprise{padding:0 10px;font-size:13px}
 .langues>a,.langues>.active{padding-left:4px;padding-right:4px}
 }
 
 @media (max-width:760px){
 .wrap{padding-left:20px;padding-right:20px}
-.barre-flot{width:calc(100% - 40px);padding-left:15px}
+.entete{width:calc(100% - 40px);margin-top:8px;margin-bottom:8px}
+.entete.flottante{margin-bottom:12px;padding-left:16px}
+.flottante .marque{font-size:14px}
 .espace-hero .indice{display:none}
 #qui,.contenus,.entreprise,.echange{padding-top:64px;padding-bottom:64px}
 .nav-liens,.entete-entreprise{display:none}
@@ -298,7 +304,6 @@ a.carte:hover .titre-carte{text-decoration:underline;text-underline-offset:4px}
 .nom-bloc{padding:14px 18px}
 .accroche{font-size:clamp(30px,9vw,38px);line-height:1.08}
 .sous-accroche{font-size:24px;line-height:31px}
-.entete{padding-top:16px;padding-bottom:16px}
 .hero-zone{padding:0 12px}
 .hero-panneau{padding:36px 16px 16px}
 .hero-contenu{gap:36px}
@@ -307,7 +312,7 @@ a.carte:hover .titre-carte{text-decoration:underline;text-underline-offset:4px}
 .porte{gap:12px;padding:16px 18px}
 .porte-tete{font-size:14px}
 .porte-titre{font-size:19px;line-height:25px}
-.porte-desc{font-size:14px;line-height:20px}
+.porte-desc{min-height:0;font-size:14px;line-height:20px}
 .titre-l{font-size:38px;line-height:42px}
 .chapo{font-size:18px;line-height:27px}
 .cartes{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;scrollbar-width:none;gap:16px;margin:0 -20px;padding:8px 20px 4px}
@@ -338,6 +343,11 @@ a.carte:hover .titre-carte{text-decoration:underline;text-underline-offset:4px}
 .legal{padding-top:40px;padding-bottom:64px}
 }
 
+/* Très petits écrans : le bouton de la bande entreprise peut passer sur deux lignes. */
+@media (max-width:360px){
+.bouton-clair{white-space:normal;padding-top:12px;padding-bottom:12px;text-align:left}
+}
+
 /* Défilement doux, et titres des sections dégagés de la barre flottante. */
 section[id]{scroll-margin-top:24px}
 @media (prefers-reduced-motion:no-preference){
@@ -345,8 +355,8 @@ html{scroll-behavior:smooth}
 }
 
 @media (prefers-reduced-motion:reduce){
-.barre-flot,.indice{transition:none}
+.indice,.entete,.entete .marque,.entete nav,.nav-liens,.entete-entreprise,.langues>a,.langues>.active,.menu-mobile>summary{transition:none}
 .indice svg{animation:none}
 .fl,.porte,.cta,.menu-lien{transition:none}
-.porte:hover .fl,.porte:hover .fl.fl-bas,.cta:hover .fl,.lien-fl:hover .fl,.bouton-clair:hover .fl,.porte:hover .fl-ext,.ext:hover .fl,.cta:active{transform:none}
+.porte:hover .fl,.porte:hover .fl.fl-bas,.cta:hover .fl,.bouton-clair:hover .fl,.porte:hover .fl-ext,.ext:hover .fl,.cta:active{transform:none}
 }

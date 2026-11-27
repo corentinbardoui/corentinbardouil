@@ -16,18 +16,13 @@ function useScrolledPast(threshold: number) {
   );
 }
 
-/** En-tête flottant, qui glisse depuis le haut après 120 px de défilement. */
-export function FloatingBar({ children }: { children: ReactNode }) {
-  const visible = useScrolledPast(120);
-  // Masquée, la barre sort du parcours clavier (visibility) et son menu téléphone se referme.
-  const closeMenu = (el: HTMLDivElement | null) => {
-    if (!visible) el?.querySelector("details")?.removeAttribute("open");
-  };
-  return (
-    <div className={visible ? "barre-flot visible" : "barre-flot"} ref={closeMenu}>
-      {children}
-    </div>
-  );
+/**
+ * L'en-tête lui-même devient la barre flottante : dès que la page défile, il reste en haut de l'écran
+ * et son fond apparaît autour de son contenu.
+ */
+export function Header({ children }: { children: ReactNode }) {
+  const floating = useScrolledPast(4);
+  return <header className={floating ? "entete flottante" : "entete"}>{children}</header>;
 }
 
 /** Flèche sous le haut de page, effacée dès que l'on commence à défiler. */
