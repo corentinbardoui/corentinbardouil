@@ -5,9 +5,18 @@ export const SITE_URL = "https://www.corentinbardouil.com";
 
 export const SITE_NAME = "Corentin Bardouil";
 
+// Date de mise en production, affichée sur les pages légales. Format AAAA-MM-JJ.
+export const LEGAL_DATE = "2026-11-27";
+
 // Date de dernière modification du contenu, reprise dans le sitemap.
 // À mettre à jour quand les textes des pages changent.
-export const LAST_UPDATE = "2026-11-23";
+export const LAST_UPDATE = "2026-11-27";
+
+// Lancement : passer à true pour afficher la section « Ce que je partage », son lien de menu,
+// la carte 01 vers cette section et la dernière phrase du récit correspondante.
+export const SHOW_CONTENT: boolean = false;
+
+export const EMAIL = "corentin.bardouil@gmail.com";
 
 export const PROFILES = {
   linkedin: "https://www.linkedin.com/in/corentin-bardouil",
@@ -15,60 +24,70 @@ export const PROFILES = {
 };
 
 export type Lang = "fr" | "en";
-export type PageKey = "home" | "booking" | "terms";
+export type PageKey = "home" | "legal" | "privacy" | "terms";
 
-type PageMeta = {
-  path: string;
-  title: string;
-  description: string;
-  // Titre affiché dans les aperçus de partage, s'il diffère du titre d'onglet.
-  shareTitle?: string;
-};
+type PageMeta = { path: string; title: string; description: string };
 
 export const pages: Record<PageKey, Record<Lang, PageMeta>> = {
   home: {
     fr: {
       path: "/",
-      title: "Corentin Bardouil | L’IA dans vos process métiers",
-      shareTitle: "Intégrer l’IA dans vos process métiers",
+      title: "Corentin Bardouil, ingénieur et fondateur",
       description:
-        "Forward deployed engineer pour les startups et les entreprises : diagnostic de vos process, mise en place de l’IA et adoption par vos équipes.",
+        "Ingénieur et fondateur, je relie la tech aux vrais enjeux des entreprises. Intégrer l’IA dans vos process, ou une heure en 1:1 pour avancer sur votre projet.",
     },
     en: {
       path: "/en",
-      title: "Corentin Bardouil | AI in your business processes",
-      shareTitle: "Put AI to work in your business processes",
+      title: "Corentin Bardouil, engineer and founder",
       description:
-        "Forward Deployed Engineer for startups and companies: process diagnosis, AI implementation and adoption by your teams.",
+        "Engineer and founder, I connect tech to the real challenges businesses face. Bring AI into your processes, or book a 1:1 hour to move your project forward.",
     },
   },
-  booking: {
+  legal: {
     fr: {
-      path: "/rendez-vous",
-      title: "Prendre rendez-vous | Corentin Bardouil",
-      description: "Premier échange de 30 minutes, gratuit, ou regard extérieur d’une heure à 199 €.",
+      path: "/mentions-legales",
+      title: "Mentions légales, Corentin Bardouil",
+      description: "Éditeur du site, hébergement et propriété des contenus.",
     },
     en: {
-      path: "/en/book",
-      title: "Book a call | Corentin Bardouil",
-      description: "A free 30-minute intro call, or a one-hour second opinion for €199.",
+      path: "/en/legal-notice",
+      title: "Legal notice, Corentin Bardouil",
+      description: "Site publisher, hosting and content ownership.",
+    },
+  },
+  privacy: {
+    fr: {
+      path: "/confidentialite",
+      title: "Confidentialité, Corentin Bardouil",
+      description: "Les données collectées sur ce site, leurs usages, leur durée de conservation et vos droits.",
+    },
+    en: {
+      path: "/en/privacy",
+      title: "Privacy, Corentin Bardouil",
+      description: "The data collected on this site, how it is used, how long it is kept and your rights.",
     },
   },
   terms: {
     fr: {
       path: "/conditions-de-vente",
-      title: "Conditions de vente | Corentin Bardouil",
-      description: "Conditions de vente du regard extérieur, réservé aux professionnels.",
+      title: "Conditions de vente, Corentin Bardouil",
+      description: "Conditions de l’échange 1:1 : prestation, prix, paiement, report, annulation et remboursement.",
     },
     en: {
       path: "/en/terms",
-      title: "Terms of sale | Corentin Bardouil",
-      description: "Terms of sale for the second opinion, for businesses only.",
+      title: "Terms of sale, Corentin Bardouil",
+      description: "Terms for the 1:1 session: service, price, payment, rescheduling, cancellation and refunds.",
     },
   },
 };
 
 export const shareImages: Record<Lang, { url: string; alt: string }> = {
-  fr: { url: "/og-fr.png", alt: "Intégrer l’IA dans vos process métiers, Corentin Bardouil" },
-  en: { url: "/og-en.png", alt: "Put AI to work in your business processes, Corentin Bardouil" },
+  fr: {
+    url: "/og-fr.png",
+    alt: "Corentin Bardouil, ingénieur et fondateur. Je relie la tech aux vrais enjeux des entreprises.",
+  },
+  en: {
+    url: "/og-en.png",
+    alt: "Corentin Bardouil, engineer and founder. I connect tech to the real challenges businesses face.",
+  },
 };

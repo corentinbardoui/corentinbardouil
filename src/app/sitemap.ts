@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { LAST_UPDATE, pages, type Lang, type PageKey } from "@/data/site";
 import { absoluteUrl, languageAlternates } from "@/lib/seo";
 
-// Les six pages (FR et EN), chacune avec ses équivalents de langue, comme dans les balises hreflang.
+// Les huit pages (FR et EN), chacune avec ses équivalents de langue, comme dans les balises hreflang.
 export default function sitemap(): MetadataRoute.Sitemap {
   const langs: Lang[] = ["fr", "en"];
 

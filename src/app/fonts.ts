@@ -1,18 +1,16 @@
 import localFont from "next/font/local";
 
-// Self-hosted fonts (SIL Open Font License): Geist (Vercel) and Unbounded.
-export const geist = localFont({
-  src: "./fonts/Geist-Variable.woff2",
-  variable: "--font-geist",
-  weight: "100 900",
+// Polices auto-hébergées (SIL Open Font License) : Manrope pour le texte, Unbounded pour le nom.
+export const manrope = localFont({
+  src: "./fonts/manrope-latin-wght-normal.woff2",
+  variable: "--font-manrope",
+  weight: "200 800",
   display: "swap",
 });
 
 export const unbounded = localFont({
-  src: [
-    { path: "./fonts/unbounded-latin-500-normal.woff2", weight: "500", style: "normal" },
-    { path: "./fonts/unbounded-latin-600-normal.woff2", weight: "600", style: "normal" },
-  ],
+  src: "./fonts/unbounded-latin-600-normal.woff2",
   variable: "--font-unbounded",
+  weight: "600",
   display: "swap",
 });

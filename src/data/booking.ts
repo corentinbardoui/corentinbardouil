@@ -1,6 +1,4 @@
-// Cal.com event types embedded on the booking pages (user/event-slug).
-// Can be overridden per environment with NEXT_PUBLIC_CAL_ECHANGE and NEXT_PUBLIC_CAL_REGARD.
-export const calLinks = {
-  echange: process.env.NEXT_PUBLIC_CAL_ECHANGE || "corentin-bardouil/premier-echange",
-  regard: process.env.NEXT_PUBLIC_CAL_REGARD || "corentin-bardouil/regard-exterieur",
-};
+// Événement Cal.com de l'échange 1:1 (utilisateur/événement). Un seul événement, en français,
+// utilisé aussi par la page anglaise. Prix, paiement et questions se règlent dans Cal.com.
+export const CAL_LINK = "corentin-bardouil/echange";
+export const CAL_URL = `https://cal.com/${CAL_LINK}`;
