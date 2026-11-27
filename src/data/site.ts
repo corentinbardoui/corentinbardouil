@@ -83,11 +83,11 @@ export const pages: Record<PageKey, Record<Lang, PageMeta>> = {
 
 export const shareImages: Record<Lang, { url: string; alt: string }> = {
   fr: {
-    url: "/og-fr.png",
+    url: "/og-fr.png?v=2",
     alt: "Corentin Bardouil, ingénieur et fondateur. Je relie la tech aux vrais enjeux des entreprises.",
   },
   en: {
-    url: "/og-en.png",
+    url: "/og-en.png?v=2",
     alt: "Corentin Bardouil, engineer and founder. I connect tech to the real challenges businesses face.",
   },
 };
