@@ -4,6 +4,7 @@ import { Arrow } from "./Arrows";
 import { BookingButton } from "./BookingButton";
 import { CompanyButton } from "./CompanyDialog";
 import { Corners, Gradient } from "./Decor";
+import { ScrollHint } from "./Scroll";
 import { SiteShell } from "./SiteShell";
 import { chrome } from "@/data/chrome";
 import { home } from "@/data/home";
@@ -82,7 +83,9 @@ export function Home({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <div className="espace-hero" />
+      <div className="espace-hero">
+        <ScrollHint href="#qui" label={chrome[lang].toAbout} />
+      </div>
 
       <section id="qui" className="section">
         <div className="wrap qui">

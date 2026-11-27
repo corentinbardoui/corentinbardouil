@@ -15,7 +15,7 @@ export const viewport: Viewport = { themeColor: "#F4F6F8" };
 
 export default function FrLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${manrope.variable} ${unbounded.variable}`}>
+    <html lang="fr" data-scroll-behavior="smooth" className={`${manrope.variable} ${unbounded.variable}`}>
       <body>{children}</body>
     </html>
   );

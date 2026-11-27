@@ -23,11 +23,13 @@ Bilingual showcase site (FR at the root, EN under `/en`), reproduced from the de
 - `next.config.ts` redirects the old booking pages (`/rendez-vous`, `/en/book`) to `#echange` with a 301.
 
 **Components** in `src/components/site/`:
-- `SiteShell`: header, footer and company dialog, shared by every page.
+- `SiteShell`: header (also copied into the floating bar), « FR | EN » switch, footer and company dialog, shared by every page.
 - `Home`: the home page, both languages. `LegalPage`: renders the legal Markdown.
 - `CompanyDialog` (client): native `<dialog>`, posts to Formspree. Every company button is a `CompanyButton`.
 - `BookingButton` (client): Cal.com modal, loaded only on click, plain link as fallback.
 - `MobileMenu` (client): the `<details>` menu below 760px.
+- `Scroll` (client): `FloatingBar` (header copy sliding in after 120px) and `ScrollHint` (arrow under the hero).
+- Smooth scrolling is CSS, off with reduced motion. Keep `data-scroll-behavior="smooth"` on `<html>` and give new anchored sections an `id` so they get `scroll-margin-top`.
 
 **Content**:
 - Home copy in `src/data/home.tsx`; header, footer and form copy in `src/data/chrome.ts`.

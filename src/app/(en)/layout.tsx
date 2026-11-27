@@ -15,7 +15,7 @@ export const viewport: Viewport = { themeColor: "#F4F6F8" };
 
 export default function EnLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${unbounded.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${manrope.variable} ${unbounded.variable}`}>
       <body>{children}</body>
     </html>
   );
