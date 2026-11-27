@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HomeFr } from "@/components/site/HomeFr";
+import { Home } from "@/components/site/Home";
 import { JsonLd } from "@/components/site/JsonLd";
 import { homeJsonLd, pageMetadata } from "@/lib/seo";
 
@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <>
       <JsonLd data={homeJsonLd("fr")} />
-      <HomeFr />
+      <Home lang="fr" />
     </>
   );
 }

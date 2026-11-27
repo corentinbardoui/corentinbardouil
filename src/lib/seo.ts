@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PROFILES, SITE_NAME, SITE_URL, pages, shareImages, type Lang, type PageKey } from "@/data/site";
 
-const ogLocale: Record<Lang, string> = { fr: "fr_FR", en: "en_GB" };
+const ogLocale: Record<Lang, string> = { fr: "fr_FR", en: "en_US" };
 
 /** URL absolue d'un chemin du site, sans barre finale pour l'accueil (comme la balise canonique). */
 export function absoluteUrl(path: string): string {
@@ -22,7 +22,7 @@ export function languageAlternates(page: PageKey, toUrl: (path: string) => strin
  * Chaque page déclare les siennes, pour qu'une sous-page n'hérite jamais de l'URL ou du titre de l'accueil.
  */
 export function pageMetadata(page: PageKey, lang: Lang): Metadata {
-  const { path, title, description, shareTitle = title } = pages[page][lang];
+  const { path, title, description } = pages[page][lang];
   const image = shareImages[lang];
   const otherLang: Lang = lang === "fr" ? "en" : "fr";
 
@@ -36,28 +36,22 @@ export function pageMetadata(page: PageKey, lang: Lang): Metadata {
       locale: ogLocale[lang],
       alternateLocale: [ogLocale[otherLang]],
       url: path,
-      title: shareTitle,
+      title,
       description,
       images: [{ url: image.url, width: 1200, height: 630, alt: image.alt }],
     },
     twitter: {
       card: "summary_large_image",
-      title: shareTitle,
+      title,
       description,
       images: [{ url: image.url, alt: image.alt }],
     },
   };
 }
 
-const personDetails: Record<Lang, { jobTitle: string; knowsAbout: string[] }> = {
-  fr: {
-    jobTitle: "Forward deployed engineer",
-    knowsAbout: ["Intelligence artificielle", "Process métiers", "Conseil en stratégie"],
-  },
-  en: {
-    jobTitle: "Forward Deployed Engineer",
-    knowsAbout: ["Artificial intelligence", "Business processes", "Strategy consulting"],
-  },
+const jobTitles: Record<Lang, string> = {
+  fr: "Ingénieur et fondateur",
+  en: "Engineer and founder",
 };
 
 /**
@@ -66,7 +60,6 @@ const personDetails: Record<Lang, { jobTitle: string; knowsAbout: string[] }> = 
  */
 export function homeJsonLd(lang: Lang) {
   const home = `${SITE_URL}/`;
-  const { jobTitle, knowsAbout } = personDetails[lang];
 
   return {
     "@context": "https://schema.org",
@@ -83,14 +76,9 @@ export function homeJsonLd(lang: Lang) {
         "@id": `${home}#person`,
         name: SITE_NAME,
         url: home,
-        jobTitle,
-        description: pages.home[lang].description,
-        knowsAbout,
+        image: `${SITE_URL}/images/portrait-corentin.jpg`,
+        jobTitle: jobTitles[lang],
         alumniOf: { "@type": "CollegeOrUniversity", name: "IMT Atlantique" },
-        workLocation: [
-          { "@type": "Place", name: "Paris" },
-          { "@type": "Place", name: "Bretagne" },
-        ],
         sameAs: [PROFILES.linkedin, PROFILES.github],
       },
     ],

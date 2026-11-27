@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { ConditionsEn } from "@/components/site/ConditionsEn";
+import { LegalPage } from "@/components/site/LegalPage";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata("terms", "en");
 
 export default function Page() {
-  return <ConditionsEn />;
+  return <LegalPage page="terms" lang="en" />;
 }
